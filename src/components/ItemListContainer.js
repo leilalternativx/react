@@ -10,11 +10,23 @@ class Boton extends Component {
 }
 
 class ItemListContainer extends Component {
+
+	constructor (){
+			super()
+			this.state = {
+					count: 0
+			}
+	}
+
+	handleClick = ()=>{
+			this.setState({count: this.state.count + 1})
+	}
+
 	render(){
 			return(
 					<table>
 							<tr>
-									<th>NAME</th>
+									<th>{this.state.count}</th>
 									<th>BOTON</th>
 									<th>Options</th>
 							</tr>
@@ -22,11 +34,13 @@ class ItemListContainer extends Component {
 							<Row></Row>
 							<Row></Row>
 							<Row></Row>
+							
+							<button onClick={this.handleClick}>CLICK</button>
+
 					</table>
 			)
 	}
 }
-
 
 
 class Title extends Component {
